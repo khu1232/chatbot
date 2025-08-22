@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cart1{
+            display: flex;
+            background-color: pink;
+            border-radius: 10px;
+            padding: 12px;
+            justify-content: center;
+        }
+        .cart{
+            height: 300px;width: 200px;
+        }
+        .buttons{
+            display: flex;
+            gap: 12px;
+            height: 6vh;
+            width: 16vw;
+            margin-left: 30px;
+        }
+        .buttons h3{
+            margin-top: 1.2vh;
+        }
+        .price{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 6vw;
+            background-color: rgb(112, 35, 28);
+            color: white;
+            display: inline;
+
+        }
+        .total{
+            height: 100px;
+            width: 100px;
+            margin-top: 7vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart1">
+        <div class="cart">
+            <img src="" alt="">
+            <div class="buttons">
+                <button onclick="incre(-1)">-</button>
+                <h3 id="count">0</h3>
+
+                <button onclick="incre(+1)">+</button>
+            </div>
+            <br>
+            <div class="price">
+                <span>Price</span>
+                <span id="price">500</span>
+                <span>$</span>
+            </div>
+            <h4 id="description"></h4>
+        </div>
+        <div class="total">
+            <span>Total</span>
+            <span>=</span>
+            <span id="total">0</span>
+        </div>
+    </div>
+</body>
+<script>
+    let c = 0; let pri = parseInt(document.getElementById("price").innerHTML)
+
+    document.getElementById("total").innerHTML = pri * c
+    function incre(helo){
+        c+=helo;
+        document.getElementById('count').innerHTML = c;
+        document.getElementById('total').innerHTML = pri * c;
+
+    }
+</script>
+</html>
